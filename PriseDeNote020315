@@ -1,0 +1,36 @@
+ Plateau qui représente une matrix de 5 par 5
+
+ Plateau :
+ O O O O O
+ O N N N O
+ O N N N O
+ O N N N O
+ O O O O O
+ 
+ O > Zone où le joueur peut jouer (zone touchable)
+ N > Zone intouchable
+ 
+ 1- Choisir une pièce
+ 2- La retirer
+ 3- La mettre à sa couleur
+ 4- INTERDIT de la replacer au même endroit, forcément en poussant les autres blocs (3 possibilites).
+ 
+ Objectif : Aligner 5 pièces de sa couleur Horizontalement, verticalement, diagonal.
+ 
+ Un joueur ne peut choisir que des pièces neutres ou à sa propres couleurs.
+ 
+ SI lors d'un mouvement les 2 joueurs font une ligne gagnante, c'est l'adversaire qui gagne si c'est moi qui a joué.
+ 
+ 
+ ---
+ 
+ Travail à faire
+ 
+ 1) Reproduction du jeu
+ 
+ La structure de donnée est l'objet informatique ou programmatique que l'on va utiliser pour représenter au mieux les données du monde physique.
+ Exemple : ça dans le monde physique ce sont des pieces en carrés qui représente.
+ 
+2) Expérimentation du jeu
+
+3) Définir les structures de données
