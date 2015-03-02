@@ -28,9 +28,26 @@
  
  1) Reproduction du jeu
  
- La structure de donnée est l'objet informatique ou programmatique que l'on va utiliser pour représenter au mieux les données du monde physique.
- Exemple : ça dans le monde physique ce sont des pieces en carrés qui représente.
- 
 2) Expérimentation du jeu
 
 3) Définir les structures de données
+
+La structure de donnée est l'objet informatique ou programmatique que l'on va utiliser pour représenter au mieux les données du monde physique.
+ Exemple : ça dans le monde physique ce sont des pieces en carrés qui représente.
+ 
+ tableau
+ 
+ 0 ---> x
+ |
+ |
+\/
+ 
+ y 	0,0	1,0	2,0	3,0	4,0
+	0,1	1,1	
+	0,2		2,2
+	0,3			3,3
+	0,4				4,4
+ 
+ type var[5][5];
+ 
+ exemple : int8_t plateau [5][5];
