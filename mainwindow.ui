@@ -6,306 +6,610 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>624</width>
-    <height>468</height>
+    <width>727</width>
+    <height>573</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralWidget">
-   <widget class="QGroupBox" name="groupBox">
+  <widget class="QWidget" name="fenetre">
+   <widget class="QGroupBox" name="plateau">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>10</y>
+      <x>120</x>
+      <y>70</y>
       <width>481</width>
       <height>391</height>
      </rect>
     </property>
-    <property name="title">
-     <string>BoxAvecBoites</string>
+    <widget class="QTextEdit" name="bloc1">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Abyssinica SIL</family>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="tabStopWidth">
+      <number>80</number>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="bloc2">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>30</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="bloc3">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>30</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="bloc4">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>30</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="bloc5">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>30</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="bloc6">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>100</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="bloc7">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>100</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="bloc8">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>100</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="bloc9">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>100</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="bloc10">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>100</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="bloc11">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>170</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="bloc12">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>170</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="bloc13">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>170</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="bloc14">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>170</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="bloc15">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>170</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="bloc16">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>240</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="bloc17">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>240</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="bloc18">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>240</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="bloc19">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>240</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="bloc20">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>240</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="bloc21">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>310</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="boc22">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>310</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="bloc23">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>310</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="bloc24">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>310</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="bloc25">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>310</y>
+       <width>61</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="AffichageJoueur1">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>120</y>
+      <width>85</width>
+      <height>22</height>
+     </rect>
     </property>
-    <widget class="QTextEdit" name="textEdit">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>30</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_2">
-     <property name="geometry">
-      <rect>
-       <x>120</x>
-       <y>30</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_3">
-     <property name="geometry">
-      <rect>
-       <x>210</x>
-       <y>30</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_4">
-     <property name="geometry">
-      <rect>
-       <x>300</x>
-       <y>30</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_5">
-     <property name="geometry">
-      <rect>
-       <x>390</x>
-       <y>30</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_6">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>100</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_7">
-     <property name="geometry">
-      <rect>
-       <x>120</x>
-       <y>100</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_8">
-     <property name="geometry">
-      <rect>
-       <x>210</x>
-       <y>100</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_9">
-     <property name="geometry">
-      <rect>
-       <x>300</x>
-       <y>100</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_10">
-     <property name="geometry">
-      <rect>
-       <x>390</x>
-       <y>100</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_11">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>170</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_12">
-     <property name="geometry">
-      <rect>
-       <x>120</x>
-       <y>170</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_13">
-     <property name="geometry">
-      <rect>
-       <x>210</x>
-       <y>170</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_14">
-     <property name="geometry">
-      <rect>
-       <x>300</x>
-       <y>170</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_15">
-     <property name="geometry">
-      <rect>
-       <x>390</x>
-       <y>170</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_16">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>240</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_17">
-     <property name="geometry">
-      <rect>
-       <x>120</x>
-       <y>240</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_18">
-     <property name="geometry">
-      <rect>
-       <x>210</x>
-       <y>240</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_19">
-     <property name="geometry">
-      <rect>
-       <x>300</x>
-       <y>240</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_20">
-     <property name="geometry">
-      <rect>
-       <x>390</x>
-       <y>240</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_21">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>310</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_22">
-     <property name="geometry">
-      <rect>
-       <x>120</x>
-       <y>310</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_23">
-     <property name="geometry">
-      <rect>
-       <x>210</x>
-       <y>310</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_24">
-     <property name="geometry">
-      <rect>
-       <x>300</x>
-       <y>310</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_25">
-     <property name="geometry">
-      <rect>
-       <x>390</x>
-       <y>310</y>
-       <width>61</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <zorder>textEdit</zorder>
-    <zorder>textEdit_2</zorder>
-    <zorder>textEdit_3</zorder>
-    <zorder>textEdit_4</zorder>
-    <zorder>textEdit_5</zorder>
-    <zorder>textEdit_10</zorder>
-    <zorder>textEdit_7</zorder>
-    <zorder>textEdit_8</zorder>
-    <zorder>textEdit_9</zorder>
-    <zorder>textEdit_6</zorder>
-    <zorder>textEdit_6</zorder>
-    <zorder>textEdit_7</zorder>
-    <zorder>textEdit_8</zorder>
-    <zorder>textEdit_9</zorder>
-    <zorder>textEdit_10</zorder>
-    <zorder>textEdit_11</zorder>
-    <zorder>textEdit_12</zorder>
-    <zorder>textEdit_13</zorder>
-    <zorder>textEdit_14</zorder>
-    <zorder>textEdit_15</zorder>
-    <zorder>textEdit_16</zorder>
-    <zorder>textEdit_17</zorder>
-    <zorder>textEdit_18</zorder>
-    <zorder>textEdit_19</zorder>
-    <zorder>textEdit_20</zorder>
-    <zorder>textEdit_21</zorder>
-    <zorder>textEdit_22</zorder>
-    <zorder>textEdit_23</zorder>
-    <zorder>textEdit_24</zorder>
-    <zorder>textEdit_25</zorder>
+    <property name="palette">
+     <palette>
+      <active>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>128</red>
+          <green>128</green>
+          <blue>128</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font">
+     <font>
+      <family>TeX Gyre Adventor</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>Joueur 1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Titre">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>10</y>
+      <width>241</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="palette">
+     <palette>
+      <active>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>85</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Text">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>85</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Text">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>128</red>
+          <green>128</green>
+          <blue>128</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Text">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>128</red>
+          <green>128</green>
+          <blue>128</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font">
+     <font>
+      <family>Comfortaa</family>
+      <pointsize>24</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Jeu Quixo</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Titre_2">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>470</y>
+      <width>211</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Comfortaa</family>
+      <pointsize>6</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Par Alexis WIDMER &amp; Pierrick BOBET</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="AffichageJoueur1_2">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>120</y>
+      <width>85</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="palette">
+     <palette>
+      <active>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>128</red>
+          <green>128</green>
+          <blue>128</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font">
+     <font>
+      <family>TeX Gyre Adventor</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>Joueur 2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="AffichageJoueur1_3">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>150</y>
+      <width>41</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="palette">
+     <palette>
+      <active>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>128</red>
+          <green>128</green>
+          <blue>128</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font">
+     <font>
+      <family>Abyssinica SIL</family>
+      <pointsize>28</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>O</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="AffichageJoueur1_4">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>150</y>
+      <width>41</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="palette">
+     <palette>
+      <active>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>128</red>
+          <green>128</green>
+          <blue>128</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font">
+     <font>
+      <family>Abyssinica SIL</family>
+      <pointsize>28</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>X</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -313,10 +617,18 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>624</width>
-     <height>22</height>
+     <width>727</width>
+     <height>27</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuJeu_Quixo">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <addaction name="actionRemise_z_ro"/>
+    <addaction name="actionQuitter"/>
+   </widget>
+   <addaction name="menuJeu_Quixo"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -327,8 +639,35 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionQuitter">
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </action>
+  <action name="actionRemise_z_ro">
+   <property name="text">
+    <string>Remise à zéro</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>actionQuitter</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>363</x>
+     <y>286</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
