@@ -1,1 +1,1 @@
-Ordre des encapsulations de types QMainWindow > QWidget > QGraphicsView > QGraphicsView > QGraphicsScene (contient un ensemble d'élément)
+Ordre des encapsulations de types QMainWindow > QWidget > QGraphicsView > QGraphicsView > QGraphicsScene (contient un ensemble d'élément) > QGraphicsPixmapItem
