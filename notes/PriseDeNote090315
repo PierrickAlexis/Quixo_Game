@@ -1,1 +1,6 @@
 Ordre des encapsulations de types QMainWindow > QWidget > QGraphicsView > QGraphicsView > QGraphicsScene (contient un ensemble d'élément) > QGraphicsPixmapItem
+
+
+int * var2; >>> Etoile permet de définir un pointeur
+& >> Adresse 2
+* var 2 >> Accès à la valeur 2 pointés
