@@ -18,3 +18,6 @@ SOURCES += main.cpp\
 HEADERS  += mon_jeu.h
 
 FORMS    += mon_jeu.ui
+
+RESOURCES += \
+    ressources.qrc

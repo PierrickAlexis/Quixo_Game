@@ -46,9 +46,11 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../main.cpp \
-		../mon_jeu.cpp moc_mon_jeu.cpp
+		../mon_jeu.cpp qrc_ressources.cpp \
+		moc_mon_jeu.cpp
 OBJECTS       = main.o \
 		mon_jeu.o \
+		qrc_ressources.o \
 		moc_mon_jeu.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/shell-unix.conf \
@@ -111,6 +113,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../../QuixoProjet.pro \
+		../../ressources.qrc \
 		../QuixoProjet.pro
 QMAKE_TARGET  = QuixoProjet
 DESTDIR       = #avoid trailing-slash linebreak
@@ -206,6 +209,7 @@ Makefile: ../QuixoProjet.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../QuixoProjet.pro \
+		../ressources.qrc \
 		/usr/lib/x86_64-linux-gnu/libQt5Widgets.prl \
 		/usr/lib/x86_64-linux-gnu/libQt5Gui.prl \
 		/usr/lib/x86_64-linux-gnu/libQt5Core.prl
@@ -271,6 +275,7 @@ Makefile: ../QuixoProjet.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf:
 ../QuixoProjet.pro:
+../ressources.qrc:
 /usr/lib/x86_64-linux-gnu/libQt5Widgets.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Gui.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Core.prl:
@@ -281,7 +286,7 @@ qmake_all: FORCE
 
 dist: 
 	@test -d .tmp/QuixoProjet1.0.0 || mkdir -p .tmp/QuixoProjet1.0.0
-	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/QuixoProjet1.0.0/ && $(COPY_FILE) --parents ../mon_jeu.h .tmp/QuixoProjet1.0.0/ && $(COPY_FILE) --parents ../main.cpp ../mon_jeu.cpp .tmp/QuixoProjet1.0.0/ && $(COPY_FILE) --parents ../mon_jeu.ui .tmp/QuixoProjet1.0.0/ && (cd `dirname .tmp/QuixoProjet1.0.0` && $(TAR) QuixoProjet1.0.0.tar QuixoProjet1.0.0 && $(COMPRESS) QuixoProjet1.0.0.tar) && $(MOVE) `dirname .tmp/QuixoProjet1.0.0`/QuixoProjet1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/QuixoProjet1.0.0
+	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/QuixoProjet1.0.0/ && $(COPY_FILE) --parents ../ressources.qrc .tmp/QuixoProjet1.0.0/ && $(COPY_FILE) --parents ../mon_jeu.h .tmp/QuixoProjet1.0.0/ && $(COPY_FILE) --parents ../main.cpp ../mon_jeu.cpp .tmp/QuixoProjet1.0.0/ && $(COPY_FILE) --parents ../mon_jeu.ui .tmp/QuixoProjet1.0.0/ && (cd `dirname .tmp/QuixoProjet1.0.0` && $(TAR) QuixoProjet1.0.0.tar QuixoProjet1.0.0 && $(COMPRESS) QuixoProjet1.0.0.tar) && $(MOVE) `dirname .tmp/QuixoProjet1.0.0`/QuixoProjet1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/QuixoProjet1.0.0
 
 
 clean:compiler_clean 
@@ -302,8 +307,15 @@ mocables: compiler_moc_header_make_all compiler_moc_source_make_all
 
 check: first
 
-compiler_rcc_make_all:
+compiler_rcc_make_all: qrc_ressources.cpp
 compiler_rcc_clean:
+	-$(DEL_FILE) qrc_ressources.cpp
+qrc_ressources.cpp: ../ressources.qrc \
+		../neutre.jpg \
+		../croix.jpg \
+		../rond.jpg
+	/usr/lib/x86_64-linux-gnu/qt5/bin/rcc -name ressources ../ressources.qrc -o qrc_ressources.cpp
+
 compiler_moc_header_make_all: moc_mon_jeu.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_mon_jeu.cpp
@@ -435,7 +447,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_header_clean compiler_uic_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
 
@@ -673,13 +685,62 @@ mon_jeu.o: ../mon_jeu.cpp ../mon_jeu.h \
 		/usr/include/qt5/QtWidgets/qtabwidget.h \
 		/usr/include/qt5/QtGui/qicon.h \
 		ui_mon_jeu.h \
-		/usr/include/qt5/QtWidgets/QGraphicsScene \
-		/usr/include/qt5/QtWidgets/qgraphicsscene.h \
+		/usr/include/qt5/QtCore/QVariant \
+		/usr/include/qt5/QtWidgets/QAction \
+		/usr/include/qt5/QtWidgets/qaction.h \
+		/usr/include/qt5/QtWidgets/qactiongroup.h \
+		/usr/include/qt5/QtWidgets/QApplication \
+		/usr/include/qt5/QtWidgets/qapplication.h \
+		/usr/include/qt5/QtCore/qcoreapplication.h \
+		/usr/include/qt5/QtCore/qeventloop.h \
+		/usr/include/qt5/QtWidgets/qdesktopwidget.h \
+		/usr/include/qt5/QtGui/qguiapplication.h \
+		/usr/include/qt5/QtGui/qinputmethod.h \
+		/usr/include/qt5/QtWidgets/QButtonGroup \
+		/usr/include/qt5/QtWidgets/qbuttongroup.h \
+		/usr/include/qt5/QtWidgets/QGraphicsView \
+		/usr/include/qt5/QtWidgets/qgraphicsview.h \
+		/usr/include/qt5/QtGui/qpainter.h \
+		/usr/include/qt5/QtGui/qtextoption.h \
 		/usr/include/qt5/QtGui/qpen.h \
+		/usr/include/qt5/QtWidgets/qscrollarea.h \
+		/usr/include/qt5/QtWidgets/qabstractscrollarea.h \
+		/usr/include/qt5/QtWidgets/qframe.h \
+		/usr/include/qt5/QtWidgets/qgraphicsscene.h \
+		/usr/include/qt5/QtWidgets/QHeaderView \
+		/usr/include/qt5/QtWidgets/qheaderview.h \
+		/usr/include/qt5/QtWidgets/qabstractitemview.h \
+		/usr/include/qt5/QtCore/qabstractitemmodel.h \
+		/usr/include/qt5/QtCore/qitemselectionmodel.h \
+		/usr/include/qt5/QtWidgets/qabstractitemdelegate.h \
+		/usr/include/qt5/QtWidgets/qstyleoption.h \
+		/usr/include/qt5/QtWidgets/qabstractspinbox.h \
+		/usr/include/qt5/QtGui/qvalidator.h \
+		/usr/include/qt5/QtCore/qregularexpression.h \
+		/usr/include/qt5/QtWidgets/qslider.h \
+		/usr/include/qt5/QtWidgets/qabstractslider.h \
+		/usr/include/qt5/QtWidgets/qstyle.h \
+		/usr/include/qt5/QtWidgets/qtabbar.h \
+		/usr/include/qt5/QtWidgets/qrubberband.h \
+		/usr/include/qt5/QtWidgets/QMenuBar \
+		/usr/include/qt5/QtWidgets/qmenubar.h \
+		/usr/include/qt5/QtWidgets/qmenu.h \
+		/usr/include/qt5/QtWidgets/QPushButton \
+		/usr/include/qt5/QtWidgets/qpushbutton.h \
+		/usr/include/qt5/QtWidgets/qabstractbutton.h \
+		/usr/include/qt5/QtWidgets/QStatusBar \
+		/usr/include/qt5/QtWidgets/qstatusbar.h \
+		/usr/include/qt5/QtWidgets/QToolBar \
+		/usr/include/qt5/QtWidgets/qtoolbar.h \
+		/usr/include/qt5/QtWidgets/QWidget \
+		/usr/include/qt5/QtWidgets/QGraphicsScene \
 		/usr/include/qt5/QtWidgets/QGraphicsPixmapItem \
 		/usr/include/qt5/QtWidgets/qgraphicsitem.h \
 		/usr/include/qt5/QtGui/QPixmap
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mon_jeu.o ../mon_jeu.cpp
+
+qrc_ressources.o: qrc_ressources.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_ressources.o qrc_ressources.cpp
 
 moc_mon_jeu.o: moc_mon_jeu.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mon_jeu.o moc_mon_jeu.cpp

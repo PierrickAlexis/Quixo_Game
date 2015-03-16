@@ -13,9 +13,11 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
@@ -25,30 +27,40 @@ QT_BEGIN_NAMESPACE
 class Ui_mon_jeu
 {
 public:
+    QWidget *centralWidget;
+    QPushButton *pushButton;
+    QGraphicsView *ma_vue;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
-    QWidget *centralWidget;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *mon_jeu)
     {
         if (mon_jeu->objectName().isEmpty())
             mon_jeu->setObjectName(QStringLiteral("mon_jeu"));
-        mon_jeu->resize(400, 300);
+        mon_jeu->resize(725, 598);
+        centralWidget = new QWidget(mon_jeu);
+        centralWidget->setObjectName(QStringLiteral("centralWidget"));
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(270, 450, 114, 33));
+        ma_vue = new QGraphicsView(centralWidget);
+        ma_vue->setObjectName(QStringLiteral("ma_vue"));
+        ma_vue->setGeometry(QRect(50, 20, 631, 411));
+        mon_jeu->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(mon_jeu);
         menuBar->setObjectName(QStringLiteral("menuBar"));
+        menuBar->setGeometry(QRect(0, 0, 725, 27));
         mon_jeu->setMenuBar(menuBar);
         mainToolBar = new QToolBar(mon_jeu);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        mon_jeu->addToolBar(mainToolBar);
-        centralWidget = new QWidget(mon_jeu);
-        centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        mon_jeu->setCentralWidget(centralWidget);
+        mon_jeu->addToolBar(Qt::TopToolBarArea, mainToolBar);
         statusBar = new QStatusBar(mon_jeu);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         mon_jeu->setStatusBar(statusBar);
 
         retranslateUi(mon_jeu);
+        QObject::connect(pushButton, SIGNAL(clicked()), mon_jeu, SLOT(close()));
 
         QMetaObject::connectSlotsByName(mon_jeu);
     } // setupUi
@@ -56,6 +68,7 @@ public:
     void retranslateUi(QMainWindow *mon_jeu)
     {
         mon_jeu->setWindowTitle(QApplication::translate("mon_jeu", "mon_jeu", 0));
+        pushButton->setText(QApplication::translate("mon_jeu", "Quitter", 0));
     } // retranslateUi
 
 };
