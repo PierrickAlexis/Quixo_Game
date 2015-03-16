@@ -28,19 +28,20 @@ mon_jeu::mon_jeu(QWidget *parent) :
     QGraphicsPixmapItem * item_croix = new QGraphicsPixmapItem(* croix);
     item_croix ->setOffset(0, 0);
     ma_scene->addItem(item_croix);
-    int y = 0;
+
+    y = 0;
     for (int i = 0; i < 5; i++)
     {
-        int x = 0;
-        for (int j = 0; j < 5; j++)
+        x = 0;
+        y = i*45;
+          for (int j = 0; j < 5; j++)
         {
+            x = j*45;
             plateau[i][j] = new QGraphicsPixmapItem();
             plateau[i][j]->setPixmap(* neutre);
             ma_scene->addItem(plateau[i][j]);
             plateau[i][j]->setPos(x, y);
-            x += 45;
         }
-        y += 45;
     }
     ui->ma_vue->setScene(ma_scene);
 }
