@@ -1,0 +1,27 @@
+
+
+#include <QGraphicsScene>
+#include <QGraphicsPixmapItem>
+#include <QPixmap>
+
+
+//apres setupUi(this);
+{
+QGraphicsScene * ma_scene;
+ma_scene = new QGraphicsScene();
+GraphicsPixmapItem * mon_item;
+mon_item = new QGraphicsPixmapItem();
+QPixmap * mon_image = new QPixmap("./image.jpg");
+mon_item->setPixmap(* mon_image);
+
+ma_scene->addItem(mon_item);
+this->ma_vue->setScene(ma_scene);
+}
+
+//Exemple pour positionner à un endroit préçis :
+mon_item->setPos(12,567);
+
+
+
+Permet de transporter les images dans le fichier binaire : Faire Clic droit sur le projet Ajouter un fichier ressources QT qui regroupe les images
+Faire un espace Ressources

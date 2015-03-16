@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>rond.jpg</file>
+        <file>neutre.jpg</file>
+        <file>croix.jpg</file>
+    </qresource>
+</RCC>
