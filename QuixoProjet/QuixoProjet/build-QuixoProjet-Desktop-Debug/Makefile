@@ -46,10 +46,12 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../main.cpp \
-		../mon_jeu.cpp qrc_ressources.cpp \
+		../mon_jeu.cpp \
+		../piece.cpp qrc_ressources.cpp \
 		moc_mon_jeu.cpp
 OBJECTS       = main.o \
 		mon_jeu.o \
+		piece.o \
 		qrc_ressources.o \
 		moc_mon_jeu.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -286,7 +288,7 @@ qmake_all: FORCE
 
 dist: 
 	@test -d .tmp/QuixoProjet1.0.0 || mkdir -p .tmp/QuixoProjet1.0.0
-	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/QuixoProjet1.0.0/ && $(COPY_FILE) --parents ../ressources.qrc .tmp/QuixoProjet1.0.0/ && $(COPY_FILE) --parents ../mon_jeu.h .tmp/QuixoProjet1.0.0/ && $(COPY_FILE) --parents ../main.cpp ../mon_jeu.cpp .tmp/QuixoProjet1.0.0/ && $(COPY_FILE) --parents ../mon_jeu.ui .tmp/QuixoProjet1.0.0/ && (cd `dirname .tmp/QuixoProjet1.0.0` && $(TAR) QuixoProjet1.0.0.tar QuixoProjet1.0.0 && $(COMPRESS) QuixoProjet1.0.0.tar) && $(MOVE) `dirname .tmp/QuixoProjet1.0.0`/QuixoProjet1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/QuixoProjet1.0.0
+	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/QuixoProjet1.0.0/ && $(COPY_FILE) --parents ../ressources.qrc .tmp/QuixoProjet1.0.0/ && $(COPY_FILE) --parents ../mon_jeu.h ../piece.h .tmp/QuixoProjet1.0.0/ && $(COPY_FILE) --parents ../main.cpp ../mon_jeu.cpp ../piece.cpp .tmp/QuixoProjet1.0.0/ && $(COPY_FILE) --parents ../mon_jeu.ui .tmp/QuixoProjet1.0.0/ && (cd `dirname .tmp/QuixoProjet1.0.0` && $(TAR) QuixoProjet1.0.0.tar QuixoProjet1.0.0 && $(COMPRESS) QuixoProjet1.0.0.tar) && $(MOVE) `dirname .tmp/QuixoProjet1.0.0`/QuixoProjet1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/QuixoProjet1.0.0
 
 
 clean:compiler_clean 
@@ -563,6 +565,9 @@ main.o: ../main.cpp ../mon_jeu.h \
 		/usr/include/qt5/QtGui/qtouchdevice.h \
 		/usr/include/qt5/QtWidgets/qtabwidget.h \
 		/usr/include/qt5/QtGui/qicon.h \
+		../piece.h \
+		/usr/include/qt5/QtWidgets/QGraphicsPixmapItem \
+		/usr/include/qt5/QtWidgets/qgraphicsitem.h \
 		/usr/include/qt5/QtWidgets/QApplication \
 		/usr/include/qt5/QtWidgets/qapplication.h \
 		/usr/include/qt5/QtCore/qcoreapplication.h \
@@ -736,8 +741,108 @@ mon_jeu.o: ../mon_jeu.cpp ../mon_jeu.h \
 		/usr/include/qt5/QtWidgets/QGraphicsScene \
 		/usr/include/qt5/QtWidgets/QGraphicsPixmapItem \
 		/usr/include/qt5/QtWidgets/qgraphicsitem.h \
-		/usr/include/qt5/QtGui/QPixmap
+		/usr/include/qt5/QtGui/QPixmap \
+		../piece.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mon_jeu.o ../mon_jeu.cpp
+
+piece.o: ../piece.cpp ../piece.h \
+		/usr/include/qt5/QtWidgets/QGraphicsPixmapItem \
+		/usr/include/qt5/QtWidgets/qgraphicsitem.h \
+		/usr/include/qt5/QtCore/qglobal.h \
+		/usr/include/qt5/QtCore/qconfig.h \
+		/usr/include/qt5/QtCore/qfeatures.h \
+		/usr/include/qt5/QtCore/qsystemdetection.h \
+		/usr/include/qt5/QtCore/qprocessordetection.h \
+		/usr/include/qt5/QtCore/qcompilerdetection.h \
+		/usr/include/qt5/QtCore/qglobalstatic.h \
+		/usr/include/qt5/QtCore/qatomic.h \
+		/usr/include/qt5/QtCore/qbasicatomic.h \
+		/usr/include/qt5/QtCore/qatomic_bootstrap.h \
+		/usr/include/qt5/QtCore/qgenericatomic.h \
+		/usr/include/qt5/QtCore/qatomic_msvc.h \
+		/usr/include/qt5/QtCore/qatomic_integrity.h \
+		/usr/include/qt5/QtCore/qoldbasicatomic.h \
+		/usr/include/qt5/QtCore/qatomic_vxworks.h \
+		/usr/include/qt5/QtCore/qatomic_power.h \
+		/usr/include/qt5/QtCore/qatomic_alpha.h \
+		/usr/include/qt5/QtCore/qatomic_armv7.h \
+		/usr/include/qt5/QtCore/qatomic_armv6.h \
+		/usr/include/qt5/QtCore/qatomic_armv5.h \
+		/usr/include/qt5/QtCore/qatomic_bfin.h \
+		/usr/include/qt5/QtCore/qatomic_ia64.h \
+		/usr/include/qt5/QtCore/qatomic_mips.h \
+		/usr/include/qt5/QtCore/qatomic_s390.h \
+		/usr/include/qt5/QtCore/qatomic_sh4a.h \
+		/usr/include/qt5/QtCore/qatomic_sparc.h \
+		/usr/include/qt5/QtCore/qatomic_gcc.h \
+		/usr/include/qt5/QtCore/qatomic_x86.h \
+		/usr/include/qt5/QtCore/qatomic_cxx11.h \
+		/usr/include/qt5/QtCore/qatomic_unix.h \
+		/usr/include/qt5/QtCore/qmutex.h \
+		/usr/include/qt5/QtCore/qlogging.h \
+		/usr/include/qt5/QtCore/qflags.h \
+		/usr/include/qt5/QtCore/qtypeinfo.h \
+		/usr/include/qt5/QtCore/qtypetraits.h \
+		/usr/include/qt5/QtCore/qsysinfo.h \
+		/usr/include/qt5/QtCore/qobject.h \
+		/usr/include/qt5/QtCore/qobjectdefs.h \
+		/usr/include/qt5/QtCore/qnamespace.h \
+		/usr/include/qt5/QtCore/qobjectdefs_impl.h \
+		/usr/include/qt5/QtCore/qstring.h \
+		/usr/include/qt5/QtCore/qchar.h \
+		/usr/include/qt5/QtCore/qbytearray.h \
+		/usr/include/qt5/QtCore/qrefcount.h \
+		/usr/include/qt5/QtCore/qarraydata.h \
+		/usr/include/qt5/QtCore/qstringbuilder.h \
+		/usr/include/qt5/QtCore/qlist.h \
+		/usr/include/qt5/QtCore/qalgorithms.h \
+		/usr/include/qt5/QtCore/qiterator.h \
+		/usr/include/qt5/QtCore/qcoreevent.h \
+		/usr/include/qt5/QtCore/qscopedpointer.h \
+		/usr/include/qt5/QtCore/qmetatype.h \
+		/usr/include/qt5/QtCore/qvarlengtharray.h \
+		/usr/include/qt5/QtCore/qcontainerfwd.h \
+		/usr/include/qt5/QtCore/qisenum.h \
+		/usr/include/qt5/QtCore/qobject_impl.h \
+		/usr/include/qt5/QtCore/qvariant.h \
+		/usr/include/qt5/QtCore/qmap.h \
+		/usr/include/qt5/QtCore/qpair.h \
+		/usr/include/qt5/QtCore/qdebug.h \
+		/usr/include/qt5/QtCore/qhash.h \
+		/usr/include/qt5/QtCore/qtextstream.h \
+		/usr/include/qt5/QtCore/qiodevice.h \
+		/usr/include/qt5/QtCore/qlocale.h \
+		/usr/include/qt5/QtCore/qshareddata.h \
+		/usr/include/qt5/QtCore/qvector.h \
+		/usr/include/qt5/QtCore/qpoint.h \
+		/usr/include/qt5/QtCore/qset.h \
+		/usr/include/qt5/QtCore/qcontiguouscache.h \
+		/usr/include/qt5/QtCore/qstringlist.h \
+		/usr/include/qt5/QtCore/qdatastream.h \
+		/usr/include/qt5/QtCore/qregexp.h \
+		/usr/include/qt5/QtCore/qstringmatcher.h \
+		/usr/include/qt5/QtCore/qrect.h \
+		/usr/include/qt5/QtCore/qsize.h \
+		/usr/include/qt5/QtGui/qpainterpath.h \
+		/usr/include/qt5/QtGui/qmatrix.h \
+		/usr/include/qt5/QtGui/qpolygon.h \
+		/usr/include/qt5/QtGui/qregion.h \
+		/usr/include/qt5/QtGui/qwindowdefs.h \
+		/usr/include/qt5/QtGui/qwindowdefs_win.h \
+		/usr/include/qt5/QtCore/qline.h \
+		/usr/include/qt5/QtGui/qpixmap.h \
+		/usr/include/qt5/QtGui/qpaintdevice.h \
+		/usr/include/qt5/QtGui/qcolor.h \
+		/usr/include/qt5/QtGui/qrgb.h \
+		/usr/include/qt5/QtCore/qsharedpointer.h \
+		/usr/include/qt5/QtCore/qsharedpointer_impl.h \
+		/usr/include/qt5/QtGui/qimage.h \
+		/usr/include/qt5/QtGui/qtransform.h \
+		/usr/include/qt5/QtGui/QPixmap \
+		/usr/include/qt5/QtCore/QDebug \
+		/usr/include/qt5/QtWidgets/QGraphicsSceneMouseEvent \
+		/usr/include/qt5/QtWidgets/qgraphicssceneevent.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o piece.o ../piece.cpp
 
 qrc_ressources.o: qrc_ressources.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_ressources.o qrc_ressources.cpp

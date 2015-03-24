@@ -14,29 +14,18 @@
    <string>mon_jeu</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>450</y>
-      <width>114</width>
-      <height>33</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Quitter</string>
-    </property>
-   </widget>
-   <widget class="QGraphicsView" name="ma_vue">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>20</y>
-      <width>631</width>
-      <height>411</height>
-     </rect>
-    </property>
-   </widget>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QGraphicsView" name="ma_vue"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Quitter</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

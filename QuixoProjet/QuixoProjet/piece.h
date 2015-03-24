@@ -6,20 +6,20 @@
 class Piece : public QGraphicsPixmapItem
 {
 public:
-    enum COULEUR_PIECE {PIECE_NEUTRE=0, PIECE_ROND, PIECE_CROIX};
+    enum couleurPiece {pieceNeutre=0, pieceRond, pieceCroix};
     explicit Piece();
-    explicit Piece(COULEUR_PIECE _couleur, int16_t _x, int16_t _y);
-    bool isSelectionnable();
+//    explicit Piece(couleurPiece couleur, int16_t x, int16_t y);
     int16_t x;
     int16_t y;
 
+    bool estJouable(couleurPiece couleurSelect, couleurPiece couleurJoueur); // revoir
+
 protected:
-    void mousePressEvent(QGraphicsSceneMouseEvent * event);
-    void mouseMoveEvent(QGraphicsSceneMouseEvent * event);
+//    void mousePressEvent(QGraphicsSceneMouseEvent * event);
 
 private:
     std::vector<QPixmap *> pixmapCollection;
-    COULEUR_PIECE couleur;
+    couleurPiece couleur;
 };
 
 #endif // PIECE_H

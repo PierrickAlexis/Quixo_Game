@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QGraphicsView>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -28,8 +29,9 @@ class Ui_mon_jeu
 {
 public:
     QWidget *centralWidget;
-    QPushButton *pushButton;
+    QGridLayout *gridLayout;
     QGraphicsView *ma_vue;
+    QPushButton *pushButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -41,12 +43,20 @@ public:
         mon_jeu->resize(725, 598);
         centralWidget = new QWidget(mon_jeu);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(270, 450, 114, 33));
+        gridLayout = new QGridLayout(centralWidget);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
         ma_vue = new QGraphicsView(centralWidget);
         ma_vue->setObjectName(QStringLiteral("ma_vue"));
-        ma_vue->setGeometry(QRect(50, 20, 631, 411));
+
+        gridLayout->addWidget(ma_vue, 0, 0, 1, 1);
+
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+
+        gridLayout->addWidget(pushButton, 1, 0, 1, 1);
+
         mon_jeu->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(mon_jeu);
         menuBar->setObjectName(QStringLiteral("menuBar"));

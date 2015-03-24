@@ -3,6 +3,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsPixmapItem>
 #include <QPixmap>
+#include <piece.h>
 
 mon_jeu::mon_jeu(QWidget *parent) :
     QMainWindow(parent),
